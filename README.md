@@ -75,5 +75,3 @@ PAUL + Gourmet Mode can compound into speeds the handling model wasn't tuned for
 ## Built with
 
 Three.js · Vite · custom GLSL (cel shading, outline) · GLB asset pipeline · no game engine
-
-Developed with Claude as a pair programmer.
