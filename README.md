@@ -35,6 +35,27 @@ A single-player time-trial circuit:
 
 ---
 
+## August 2026 playability update
+
+> **Status:** implemented and tested in a preserved local preview build. The Netlify production URL above has **not** been redeployed with this iteration yet.
+
+This iteration focused on making the first session understandable and the race loop feel complete, without rebuilding the game:
+
+- **A real entry flow.** Added a start screen that explains the goal before the countdown begins.
+- **Player-facing controls.** The menu now calls out steering, `Space` drift / Mini Boost, and `Esc` pause / resume. `R` still works as a hidden rescue/debug key but is no longer presented as a core control.
+- **A complete race loop.** Added explicit menu → countdown → racing → results states, a finish summary for total / best / last lap, and a reliable “race again” path that resets race, item, effect, and vehicle state.
+- **A clearer first driving view.** Raised the oversized start/finish banner so it keeps its landmark role without blocking as much of the track ahead.
+- **Distinct reward and hazard language.** Mont Blanc keeps the purple Sugar Crash warning. Gourmet Mode now uses gold, coral, green, and cyan feedback so collecting macarons no longer looks like the same stun/slow effect.
+- **True pause / resume.** Players can use `Esc` or a visible HUD button. Pausing freezes simulation time itself: vehicle motion, race timing, item respawns, timed effects, particles, and ambient animation. Switching away from the tab or app also pauses automatically.
+- **Safer iteration.** The previous playable package was preserved before editing. The new build passed Vite production compilation and local browser checks with no runtime console errors.
+
+### What playtesting changed
+
+The most useful item-system finding was not a mechanics bug. Macarons and Mont Blanc behaved differently in code, but both could create purple full-screen feedback, so a positive reward and a hazard felt identical at a glance. The fix was to separate their visual semantics instead of changing the underlying item rules.
+
+This pass also reinforced a product lesson: features that exist but are not explained might as well not exist for a first-time player. The start screen, complete results flow, and visible pause affordance therefore had higher priority than adding more content.
+---
+
 ## Three decisions I'd call out
 
 ### 1. Visuals and logic are fully decoupled
