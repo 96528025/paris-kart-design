@@ -54,6 +54,7 @@ This iteration focused on making the first session understandable and the race l
 The most useful item-system finding was not a mechanics bug. Macarons and Mont Blanc behaved differently in code, but both could create purple full-screen feedback, so a positive reward and a hazard felt identical at a glance. The fix was to separate their visual semantics instead of changing the underlying item rules.
 
 This pass also reinforced a product lesson: features that exist but are not explained might as well not exist for a first-time player. The start screen, complete results flow, and visible pause affordance therefore had higher priority than adding more content.
+
 ---
 
 ## Three decisions I'd call out
